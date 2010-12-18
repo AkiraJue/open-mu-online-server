@@ -1,0 +1,58 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Project Author	: (c) OMON											    	//
+// Project Info		: Season 4 + Costum											//
+// Last Edit Date	: 10 / 12 / 2010											//
+// Version			: Full Season 4 Episode 1 (Japan)							//
+//////////////////////////////////////////////////////////////////////////////////
+//Version: 1.00 | Code Name: Thunder											//
+//////////////////////////////////////////////////////////////////////////////////
+  * Added Option to Switch checksum on/off.
+  * Added Option to Switch personal id req on/off.
+  * Added Option to Switch between old or new Golden Invasion styles.
+  * Fixes Golden Invasion message now shows.
+  * Added Option to Switch between WZ party drop or private server styles.
+  * Added Option to Switch that PK in Party can move,use shops and kill.
+  * Added Option to Switch that PK can be killed or not.
+  * Added Option to Switch GM can use M key on/off.
+  * Added Option to Switch between item options:
+	* Allow Excellent Anc on/off.
+	* Allow Joh Anc on/off.
+	* Allow Exc Socket on/off.
+	* Allow + 15 items on/off.
+	* Jewel Of Life +28 items on/off.
+  * Added Option to Switch between poition count in shop on/off.
+  * Added Option to Switch allow PVP in arena map on/off.
+  * Added Option to Switch Chaos Castle event can enter only PK players on/off.
+  * Added Option to Switch Rakion boss respawn time in 24h or normal.
+  * Fixes Connect to server using Vista,Seven.
+  * Summoner skill damage over 65k+.
+  * Fixes Mana Shield when uver 32k+ stats.
+  * Removed CrashDumpFile generation.
+  * Fixes Box of Kundum.
+  * Fixes destroy gioCP.
+  * Fixes Serial 0x0000000.
+  * Fixes Master class enter in devil square event.
+  * Fixes Master class enter in blood castle event.
+  * Fixes Master class enter in illusion temple event.
+  * Fixes Invalid Socket errors.
+  * Fixes false Speed Hack detections.
+  * Fixes item resistance.
+  * Added Console.
+  * Added Connection message upon player login.
+  * Added post command.
+  * Added post/console/other action logs write to file.
+  * Added many usefull configuration settings.
+  * Added IP Block system.
+  * Marlon quest fixed.
+  * Mu Online database is updated.
+  * Added Advanced server rate system.
+  * Added Command /reload.
+    * Reload all costum features!
+  * Added Castle Siege skill usage on normal gameserver.
+  * Added Support for 65kk Max Stats(Need edit DB!).
+//////////////////////////////////////////////////////////////////////////////////
+//Version: 1.01 | Code Name: Thunder											//
+//////////////////////////////////////////////////////////////////////////////////
+  * Post command fixed.
+
+
