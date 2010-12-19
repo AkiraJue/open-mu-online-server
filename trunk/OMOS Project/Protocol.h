@@ -11,3 +11,4 @@ bool ProtocolCore (BYTE protoNum,LPBYTE aRecv,int aLen,int aIndex,DWORD Encrypt,
 //- Defines
 //------------------------------------------------------
 #define DataRecv ((void(*) (BYTE,PBYTE,DWORD,DWORD,...)) 0x004368E0)
+#define ShopDataLoad ((void(*)()) 0x00406B6D)
