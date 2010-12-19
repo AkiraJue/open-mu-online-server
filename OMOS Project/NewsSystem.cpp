@@ -16,14 +16,13 @@ void gNewsSystem::Start()
 {
 	if(ReadINI.GetInt("NewsSystem","NewsSystemEnabled",INI_NEWS) == 1)
 	{
+		Tools.FileExist(INI_NEWS);
 		_beginthread(News_Manage,0,NULL);
 		Console.Write("[NewsSystem] News system has been started!");
 	}
 }
 void News_Manage(void * lpParam)
 {
-	//--------------------------------------------------------------------------------
-	Tools.FileExist(INI_NEWS);
 	//--------------------------------------------------------------------------------
 	int Sections = ReadINI.GetInt("NewsSystem","SectionCount",INI_NEWS);
 	int Time = ReadINI.GetInt("NewsSystem","TimeBetweenNews",INI_NEWS) * 60000;

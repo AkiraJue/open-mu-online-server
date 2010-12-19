@@ -59,16 +59,3 @@ int GetItem(int Group,int ID)
 {
 	return ((Group*512) +ID);
 }
-
-void DropItem(DWORD aIndex,char* msg)
-{
-	if (msg == NULL)
-	{
-		return;
-	}
-	OBJECTSTRUCT *gObj = (OBJECTSTRUCT*)OBJECT_POINTER(aIndex);
-	int ItemType,ItemNr,ItemLevel,ItemSkill,ItemLuck,ItemOpt,ItemExc,ItemAncient;
-	sscanf_s(msg,"%d %d %d %d %d %d %d %d",&ItemType,&ItemNr,&ItemLevel,&ItemSkill,&ItemLuck,&ItemOpt,&ItemExc,&ItemAncient);
-    DWORD Item = ItemType * 512 + ItemNr;
-    ItemSerialCreateSend (aIndex,gObj->MapNumber,gObj->X,gObj->Y,Item,ItemLevel,0,ItemSkill,ItemLuck,ItemOpt,aIndex,ItemExc,ItemAncient);
-}
