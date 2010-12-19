@@ -15,14 +15,16 @@ void cFixes::EditMemory()
 {
 	if (ReadINI.GetInt("Fixes","DisableGameServerCheckSum",INI_FIXES) == 1)
 	{
-		Tools.SetByte(0x00438D3A,0x74);		// Checksum
+		Tools.SetByte(0x00438CD1,0xEB);
+		Tools.SetByte(0x00438D3A,0xEB);		// Checksum
 	}
 	//----------------------------------------------------------------
 	if (ReadINI.GetInt("Fixes","DisablePersonalIDCheck",INI_FIXES) == 0)
 	{
-		Tools.SetNop(0x0043B9D6,5);			// Personal ID Fix
-		Tools.SetNop(0x004504E9,2);			// Guild ID Fix
-		Tools.SetNop(0x00450376,6);			// Guild ID Fix
+		
+		Tools.SetNop(0x0043B9D6,5); //Delete Char
+		Tools.SetNop(0x00450376,6); //Delete Guild
+		Tools.SetNop(0x004504E9,2);
 	}
 	//----------------------------------------------------------------
 	if (ReadINI.GetInt("Fixes","EnableOldGoldenEvent",INI_FIXES) == 1)

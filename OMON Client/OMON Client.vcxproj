@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{EF6F1149-7DA9-476A-B45A-5977A2F84DA3}</ProjectGuid>
-    <RootNamespace>OMOSProject</RootNamespace>
-    <ProjectName>OMOS_Server</ProjectName>
+    <ProjectGuid>{FB2C0C37-A18B-4F1B-AAF7-1090D0FDDB4B}</ProjectGuid>
+    <RootNamespace>OMONClient</RootNamespace>
+    <ProjectName>OMON_Client</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -38,7 +38,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)\Build\</OutDir>
+    <OutDir>$(SolutionDir)\Build)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -63,34 +63,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Configurations.cpp" />
-    <ClCompile Include="Console.cpp" />
-    <ClCompile Include="Fixes.cpp" />
-    <ClCompile Include="IPBlock.cpp" />
-    <ClCompile Include="Item.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Monster.cpp" />
-    <ClCompile Include="NewsSystem.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Protocol.cpp" />
-    <ClCompile Include="ReadINI.cpp" />
     <ClCompile Include="StdAfx.cpp" />
-    <ClCompile Include="Tools.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Configurations.h" />
-    <ClInclude Include="Console.h" />
-    <ClInclude Include="Fixes.h" />
-    <ClInclude Include="IPBlock.h" />
-    <ClInclude Include="Item.h" />
     <ClInclude Include="Main.h" />
-    <ClInclude Include="Monster.h" />
-    <ClInclude Include="NewsSystem.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Protocol.h" />
-    <ClInclude Include="ReadINI.h" />
     <ClInclude Include="StdAfx.h" />
-    <ClInclude Include="Tools.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Change Log.txt" />

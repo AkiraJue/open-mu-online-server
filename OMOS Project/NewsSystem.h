@@ -1,28 +1,28 @@
 //=======================================================================================
-//= Main.cpp
+//= NewsSystem.h
 //=======================================================================================
-#include "StdAfx.h"
-
-//------------------------------------------------------
-//- Variables
-//------------------------------------------------------
-DWORD OldProtect;
 
 //------------------------------------------------------
 //- Start
 //------------------------------------------------------
-MU_API Main()
+class gNewsSystem
 {
-	PROTECT_CHECK_START
-		Console.Init();
-		Tools.HookThis((DWORD)&ProtocolCore,0x004038BE);
-		Config.EditMemory();
-		Fixes.EditMemory();
-		LoadIPBlock();
-		NewsSystem.Start();
-	PROTECT_CHECK_ELSE
-		Tools.MessageBoxShow(MB_OK,"Error","Cant load GameServer.dll!");
-		Exit;
-	PROTECT_CHECK_END
-}
+public:
+	void Start();
+};
+void News_Manage(void * lpParam);
+//------------------------------------------------------
+//- Structures
+//------------------------------------------------------
+struct gNewsList
+{
+	char Message_1[255];
+	char Message_2[255];
+	char Message_3[255];
+};
 
+//------------------------------------------------------
+//- Variables
+//------------------------------------------------------
+extern gNewsSystem NewsSystem;
+extern gNewsList NewsList;

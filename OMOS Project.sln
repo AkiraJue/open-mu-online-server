@@ -1,15 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OMOS_Addon", "OMOS Project\OMOS Project.vcxproj", "{EF6F1149-7DA9-476A-B45A-5977A2F84DA3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OMOS_Server", "OMOS Project\OMOS Project.vcxproj", "{EF6F1149-7DA9-476A-B45A-5977A2F84DA3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OMON_Client", "OMON Client\OMON Client.vcxproj", "{FB2C0C37-A18B-4F1B-AAF7-1090D0FDDB4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Build|Win32 = Build|Win32
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{EF6F1149-7DA9-476A-B45A-5977A2F84DA3}.Build|Win32.ActiveCfg = Release|Win32
 		{EF6F1149-7DA9-476A-B45A-5977A2F84DA3}.Build|Win32.Build.0 = Release|Win32
+		{EF6F1149-7DA9-476A-B45A-5977A2F84DA3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EF6F1149-7DA9-476A-B45A-5977A2F84DA3}.Debug|Win32.Build.0 = Debug|Win32
+		{EF6F1149-7DA9-476A-B45A-5977A2F84DA3}.Release|Win32.ActiveCfg = Release|Win32
+		{EF6F1149-7DA9-476A-B45A-5977A2F84DA3}.Release|Win32.Build.0 = Release|Win32
+		{FB2C0C37-A18B-4F1B-AAF7-1090D0FDDB4B}.Build|Win32.ActiveCfg = Release|Win32
+		{FB2C0C37-A18B-4F1B-AAF7-1090D0FDDB4B}.Build|Win32.Build.0 = Release|Win32
+		{FB2C0C37-A18B-4F1B-AAF7-1090D0FDDB4B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FB2C0C37-A18B-4F1B-AAF7-1090D0FDDB4B}.Debug|Win32.Build.0 = Debug|Win32
+		{FB2C0C37-A18B-4F1B-AAF7-1090D0FDDB4B}.Release|Win32.ActiveCfg = Release|Win32
+		{FB2C0C37-A18B-4F1B-AAF7-1090D0FDDB4B}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -20,10 +20,11 @@ extern DWORD OldProtect;
 #define INI_FIXES		".//Data//Fixes.ini"
 #define INI_COMMON		".//Data//Common.ini"
 #define INI_BLOCKED_IP	".//Data//Script//BlockedIPList.script"
+#define INI_NEWS		".//Data//Script//NewsSystem.script"
 //------------------------------------------------------
 //- Version
 //------------------------------------------------------
-#define SERVER_VERSION "1.01"
+#define SERVER_VERSION "1.01A"
 #define SERVER_SEASON "IV"
 #define SERVER_CLIENT "1.03K JPN"
 #define SERVER_WEB "tinyurl.com/omon11"
