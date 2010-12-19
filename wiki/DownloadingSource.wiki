@@ -1,5 +1,5 @@
 #summary How to download source.
-#labels Phase-Deploy
+#labels Phase-Deploy,Featured
 
 = Introduction =
 
