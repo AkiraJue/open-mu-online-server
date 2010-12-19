@@ -15,17 +15,6 @@
 //- Project Includes
 //------------------------------------------------------
 #include "Main.h"
-#include "Tools.h"
-#include "ReadINI.h"
-#include "Configurations.h"
-#include "Fixes.h"
-#include "Player.h"
-#include "Console.h"
-#include "Item.h"
-#include "Monster.h"
-#include "Protocol.h"
-#include "IPBlock.h"
-#include "NewsSystem.h"
 
 //------------------------------------------------------
 //- Warning Disable

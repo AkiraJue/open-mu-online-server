@@ -82,12 +82,17 @@ bool ProtocolCore (BYTE protoNum,LPBYTE aRecv,int aLen,int aIndex,DWORD Encrypt,
 			Config.EditMemory();
 			LoadIPBlock();
 			//--------------------------------------------------------------------------------
-			Player.SendTextMsg(1,"[Reload] SQL Connection Reloaded!");
 			Player.SendTextMsg(1,"[Reload] Server Configuration Reloaded!");
-			Player.SendTextMsg(1,"[Reload] Pet Sys Configuration Reloaded!");
 			Player.SendTextMsg(1,"[Reload] Blocked IP Configuration Reloaded!");
-			Player.SendTextMsg(1,"[Reload] Costum Rate Configuration Reloaded!");
 			//--------------------------------------------------------------------------------
+		}
+		//-----------------------------------------------------------------------------------------------------------------------------------------------------
+		else if(COMMAND_NAME("/omon"))
+		{
+			Player.SendTextMsg(1,"This server is powered by OMON Project!");
+			Player.SendTextMsg(1,"http://tinyurl/omon11/");
+			Player.SendTextMsg(1,"OMON Project is developed by System32");
+			Player.SendTextMsg(1,"MSN/Email: system.32@hotmail.com");
 		}
 		//-----------------------------------------------------------------------------------------------------------------------------------------------------
 		break;
