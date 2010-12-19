@@ -22,6 +22,39 @@ void ChangeIP()
 	memcpy(&MainIP5[0],IP,strlen(IP));
 }
 
+void SiegeSkillsOnNormalGS()
+{
+	if(GetPrivateProfileInt("Skill","EnableCastleSiegeSkillOnNormal",0,"./config") == 1)
+	{
+		*(BYTE*)(0x0057F0A7+1) = 0x2B;
+		*(BYTE*)(0x0057F0AC+1) = 0x26;
+		*(BYTE*)(0x0057F0B1+1) = 0x21;
+		*(BYTE*)(0x0057F0B6+1) = 0x1C;
+		*(BYTE*)(0x0057F0BB+1) = 0x17;
+		*(BYTE*)(0x0059A9B5+2) = 0x00;
+		*(BYTE*)(0x0059A9BB+2) = 0x00;
+		*(BYTE*)(0x0059A9C1+2) = 0x00;
+		*(BYTE*)(0x0059A9C7+2) = 0x00;
+		*(BYTE*)(0x0059A9CD+2) = 0x00;
+		*(BYTE*)(0x0059A9D3+2) = 0x00;
+		*(BYTE*)(0x00579D0F+1) = 0x33;
+		*(BYTE*)(0x00579D14+1) = 0x2E;
+		*(BYTE*)(0x00579D19+1) = 0x29;
+		*(BYTE*)(0x00579D1E+1) = 0x24;
+		*(BYTE*)(0x00579D23+1) = 0x1F;
+		*(BYTE*)(0x00579D71+1) = 0x33;
+		*(BYTE*)(0x00579D76+1) = 0x2E;
+		*(BYTE*)(0x00579D7B+1) = 0x29;
+		*(BYTE*)(0x00579D80+1) = 0x24;
+		*(BYTE*)(0x00579D85+1) = 0x1F;
+		*(BYTE*)(0x00492A98+3) = 0x01;
+
+		*(BYTE*)(0x00579D28) = 0xEB;
+		*(BYTE*)(0x0057F0C0) = 0xEB;
+		*(BYTE*)(0x00579D8A) = 0xEB; 
+	}
+}
+
 int APIENTRY DllMain (HINSTANCE hInst, DWORD dwReason, LPVOID lpReserved)
 {
 	switch(dwReason)
