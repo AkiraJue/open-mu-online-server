@@ -15,16 +15,18 @@ extern DWORD OldProtect;
 #define PROTECT_CHECK_ELSE }else{
 #define Exit ExitProcess(0)
 #define COMMAND_NAME(CommandName) !memcmp(&aRecv[13],CommandName,strlen(CommandName))
+#define PGetNPC_ID aRecv[4] + aRecv[3] * 256
 #define INI				".//Data//Main.ini"
 #define INI_COMMANDS	".//Data//Command.ini"
 #define INI_FIXES		".//Data//Fixes.ini"
 #define INI_COMMON		".//Data//Common.ini"
 #define INI_BLOCKED_IP	".//Data//Script//BlockedIPList.script"
 #define INI_NEWS		".//Data//Script//NewsSystem.script"
+#define INI_NPC		".//Data//CostumNPC.ini"
 //------------------------------------------------------
 //- Version
 //------------------------------------------------------
-#define SERVER_VERSION "1.01A"
+#define SERVER_VERSION "1.02"
 #define SERVER_SEASON "IV"
 #define SERVER_CLIENT "1.03K JPN"
 #define SERVER_WEB "tinyurl.com/omon11"

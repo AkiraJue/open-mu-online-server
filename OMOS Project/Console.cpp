@@ -35,7 +35,7 @@ void Logger::Init()
 	this->Write("// Season			: %s, Client v%s"													, SERVER_SEASON,SERVER_CLIENT	);
 	this->Write("// Web				: %s"																	, SERVER_WEB					);
 	this->Write("//////////////////////////////////////////////////////////////////////////////"							);
-	this->Write("// Last Edit Date		: 10 / 12 / 2010 "																		);
+	this->Write("// Last Edit Date		: 12 / 12 / 2010 "																		);
 	this->Write("//////////////////////////////////////////////////////////////////////////////"							);
 }
 void Logger::Write(const char* Format, ...)
