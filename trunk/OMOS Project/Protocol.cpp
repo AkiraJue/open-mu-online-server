@@ -60,6 +60,10 @@ bool ProtocolCore (BYTE protoNum,LPBYTE aRecv,int aLen,int aIndex,DWORD Encrypt,
 		else if(COMMAND_NAME("/drop"))
 		{
 			//--------------------------------------------------------------------------------
+			char * Cmd = (char*)aRecv+13+strlen("/drop");
+			//--------------------------------------------------------------------------------
+			int ItemType,ItemNr,ItemLevel,ItemSkill,ItemLuck,ItemOpt,ItemExc,ItemAncient;
+			//--------------------------------------------------------------------------------
 			if(Player.IsGameMaster() == false)
 			{
 				//--------------------------------------------------------------------------------
@@ -67,7 +71,11 @@ bool ProtocolCore (BYTE protoNum,LPBYTE aRecv,int aLen,int aIndex,DWORD Encrypt,
 				//--------------------------------------------------------------------------------
 			}
 			//--------------------------------------------------------------------------------
-			DropItem(aIndex,(char*)aRecv+13+strlen("/drop"));
+			sscanf_s(Cmd,"%d %d %d %d %d %d %d %d",&ItemType,&ItemNr,&ItemLevel,&ItemSkill,&ItemLuck,&ItemOpt,&ItemExc,&ItemAncient);
+			//--------------------------------------------------------------------------------
+			DWORD Item = ItemType * 512 + ItemNr;
+			//--------------------------------------------------------------------------------
+			ItemSerialCreateSend(aIndex,gObj->MapNumber,gObj->X,gObj->Y,Item,ItemLevel,0,ItemSkill,ItemLuck,ItemOpt,aIndex,ItemExc,ItemAncient);
 			//--------------------------------------------------------------------------------
 		}
 		//-----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -105,12 +113,12 @@ bool ProtocolCore (BYTE protoNum,LPBYTE aRecv,int aLen,int aIndex,DWORD Encrypt,
 			//--------------------------------------------------------------------------------
 		}
 		//-----------------------------------------------------------------------------------------------------------------------------------------------------
-		else if(COMMAND_NAME("/omon"))
+		else if(COMMAND_NAME("/omos"))
 		{
-			Player.SendTextMsg(1,"This server is powered by OMON Project!");
+			Player.SendTextMsg(1,"This server is powered by OMOS Project!");
 			Player.SendTextMsg(1,"http://tinyurl/omon11/");
-			Player.SendTextMsg(1,"OMON Project is developed by System32");
-			Player.SendTextMsg(1,"MSN/Email: system.32@hotmail.com");
+			Player.SendTextMsg(1,"OMOS Project is developed by System32");
+			Player.SendTextMsg(1,"MSN/Email: syNtem.32@hotmail.com");
 		}
 		//-----------------------------------------------------------------------------------------------------------------------------------------------------
 		else if(COMMAND_NAME("/gmove"))

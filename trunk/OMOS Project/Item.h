@@ -118,7 +118,6 @@ struct PMSG_USEITEM
 void CGUseItemRecv(PMSG_USEITEM* lpMsg,int aIndex);
 void DeleteItem(int aIndex, int Slot);
 int GetItem(int Group,int ID);
-void DropItem(DWORD aIndex,char* msg);
 
 //------------------------------------------------------
 //- Defines
