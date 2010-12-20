@@ -27,7 +27,7 @@ extern DWORD OldProtect;
 //------------------------------------------------------
 //- Version
 //------------------------------------------------------
-#define SERVER_VERSION "1.02B"
+#define SERVER_VERSION "1.03"
 #define SERVER_SEASON "IV"
 #define SERVER_CLIENT "1.03K JPN"
 #define SERVER_WEB "tinyurl.com/omon11"

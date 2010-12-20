@@ -10,7 +10,7 @@ class gNewsSystem
 public:
 	void Load();
 	void Start();
-
+	void SendMsg(int Type,char * Text, ...);
 	int Count;
 private:
 	int Value[6];
