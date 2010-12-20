@@ -10,6 +10,14 @@
 #include <process.h>
 #include <Stdio.h>
 #include <Time.h>
+#include <Tchar.h>
+#include <Conio.h>
+#include <Stdlib.h>
+#include <Iostream>
+#include <Conio.h>
+//#include <winsock2.h>
+#include <rpc.h>
+#include <rpcdce.h>
 
 //------------------------------------------------------
 //- Project Includes
@@ -26,7 +34,7 @@
 #include "Protocol.h"
 #include "IPBlock.h"
 #include "NewsSystem.h"
-//#include "GMSystem.h"
+#include "CQuery.h"
 
 //------------------------------------------------------
 //- Warning Disable

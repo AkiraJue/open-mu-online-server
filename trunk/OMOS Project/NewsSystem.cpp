@@ -55,33 +55,41 @@ void gNewsSystem::Load()
 	rewind(fp);
 	fclose(fp);
 	//--------------------------------------------------------------------------------
-	Console.Write("[NewsSystem] News System has been loaded!");
+	Console.Write("[NewsSystem] News system configuration has been loaded!");
 	//--------------------------------------------------------------------------------
 }
 void Manage(void * lpParam)
 {
+	Console.Write("[NewsSystem] News system thread has been started!");
 	//--------------------------------------------------------------------------------
 	while(true)
 	{
 		//--------------------------------------------------------------------------------
+		Sleep(1);
+		//--------------------------------------------------------------------------------
 		SYSTEMTIME t;
 		GetLocalTime(&t);
 		//--------------------------------------------------------------------------------
-		for(int x=1;x < NewsSystem.Count;x++)
+		for(int x=0;x < NewsSystem.Count;x++)
 		{
 			//--------------------------------------------------------------------------------
-			if(NewsList[NewsSystem.Count].News_Day == t.wDay && NewsList[NewsSystem.Count].News_Month == t.wMonth && NewsList[NewsSystem.Count].News_Year == t.wYear && NewsList[NewsSystem.Count].News_Hour == t.wHour && NewsList[NewsSystem.Count].News_Minute == t.wMinute)
+			DWORD CurrentTime = MAKELONG(t.wHour,t.wMinute);
+			DWORD MessageTime = MAKELONG(NewsList[x].News_Hour, NewsList[x].News_Minute);
+			//--------------------------------------------------------------------------------
+			if(MessageTime == CurrentTime)
 			{
+				if(NewsList[x].News_Day == t.wDay && NewsList[x].News_Month == t.wMonth && NewsList[x].News_Year == t.wYear)
+				{
+					//--------------------------------------------------------------------------------
+					NewsSystem.SendMsg(NewsList[x].News_Type,NewsList[x].News_Line);
+					//--------------------------------------------------------------------------------
+				}
 				//--------------------------------------------------------------------------------
-				Player.SendAllTextMsg(NewsList[NewsSystem.Count].News_Type,NewsList[NewsSystem.Count].News_Line);
-				//--------------------------------------------------------------------------------
-				Console.Write("[NewsAncounce] Send Message: %s",NewsList[NewsSystem.Count].News_Line);
+				Sleep(60000); //Sleep 1min to prevent message to repeat it self!
 				//--------------------------------------------------------------------------------
 			}
 			//--------------------------------------------------------------------------------
 		}
-		//--------------------------------------------------------------------------------
-		Sleep(100);
 		//--------------------------------------------------------------------------------
 	}
 	//--------------------------------------------------------------------------------
@@ -96,7 +104,25 @@ void gNewsSystem::Start()
 		_beginthread(Manage,0,NULL);
 	}
 }
+void gNewsSystem::SendMsg(int Type,char * Text, ...)
+{
+	char szBuffer[1024];
+	va_list pArguments;
+	va_start(pArguments,Text);
+	vsprintf(szBuffer,Text,pArguments);
+	va_end(pArguments);
 
+	for(int i = OBJECT_MIN; i < OBJECT_MAX; i++)
+	{
+		OBJECTSTRUCT *gObj = (OBJECTSTRUCT*)OBJECT_POINTER(i);
+		if(gObj->Connected == PLAYER_PLAYING)
+		GCServerMsgStringSend(szBuffer,i,Type);
+	}
+	//--------------------------------------------------------------------------------
+	Console.Write("[NewsAncounce] Send Message: %s",szBuffer);
+	//--------------------------------------------------------------------------------
+	ZeroMemory(szBuffer,sizeof(szBuffer));
+}
 //------------------------------------------------------
 //- Variables
 //------------------------------------------------------

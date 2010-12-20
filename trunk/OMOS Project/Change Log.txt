@@ -81,3 +81,25 @@
   * Added Simple GM System.
   * Removed Old News System added more advanded!
   * Removed Simple GM System ( Started to make SQL based ).
+//////////////////////////////////////////////////////////////////////////////////
+//Version: 1.03 | Code Name: Thunder											//
+//////////////////////////////////////////////////////////////////////////////////
+  * News System has been fixes, and now is working!
+  * Player.SendAllTextMsg() function fixed.
+  * Added new game master system!
+    * Note: All gamemaster list must be on GM_Commands table, if not it may couse bugs!
+  //========================================================================================================================================
+		if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[GM_Commands]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+		drop table [dbo].[GM_Commands]
+		GO
+
+		CREATE TABLE [dbo].[GM_Commands] (
+			[Name] [char] (11) COLLATE Latin1_General_CI_AS NULL ,
+			[Gg] [int] NULL ,
+			[Dropp] [int] NULL ,
+			[Gmove] [int] NULL ,
+			[Reload] [int] NULL 
+		) ON [PRIMARY]
+		GO
+//========================================================================================================================================
+

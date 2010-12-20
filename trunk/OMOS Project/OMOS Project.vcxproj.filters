@@ -64,6 +64,9 @@
     <ClCompile Include="NewsSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CQuery.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StdAfx.h">
@@ -109,6 +112,9 @@
       <Filter>Header Files\Old</Filter>
     </ClInclude>
     <ClInclude Include="NewsSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CQuery.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

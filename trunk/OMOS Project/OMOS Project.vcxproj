@@ -65,6 +65,7 @@
   <ItemGroup>
     <ClCompile Include="Configurations.cpp" />
     <ClCompile Include="Console.cpp" />
+    <ClCompile Include="CQuery.cpp" />
     <ClCompile Include="Fixes.cpp" />
     <ClCompile Include="NewsSystem.cpp" />
     <ClCompile Include="_GMSystem.cpp">
@@ -86,6 +87,7 @@
   <ItemGroup>
     <ClInclude Include="Configurations.h" />
     <ClInclude Include="Console.h" />
+    <ClInclude Include="CQuery.h" />
     <ClInclude Include="Fixes.h" />
     <ClInclude Include="NewsSystem.h" />
     <ClInclude Include="_GMSystem.h">

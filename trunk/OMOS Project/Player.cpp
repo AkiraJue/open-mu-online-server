@@ -7,7 +7,7 @@
 //- Variables
 //------------------------------------------------------
 CPlayer Player; // Players Class
-
+CQuery Sql;
 //------------------------------------------------------
 //- Start
 //------------------------------------------------------
@@ -28,6 +28,7 @@ void CPlayer::SendTextMsg(int Type,char * Text, ...)
 	this->GetName(Nickn);
 	Console.Write("[SendTextMsg][Index: %d][Nick: %s] %s",this->aIndex,Nickn,szBuffer);
 }
+
 void CPlayer::SendAllTextMsg(int Type,char * Text, ...)
 {
 	char szBuffer[1024];
@@ -41,7 +42,7 @@ void CPlayer::SendAllTextMsg(int Type,char * Text, ...)
 	{
 		OBJECTSTRUCT *gObj = (OBJECTSTRUCT*)OBJECT_POINTER(i);
 		if(gObj->Connected == PLAYER_PLAYING)
-		GCServerMsgStringSend(szBuffer,this->aIndex,Type);
+		GCServerMsgStringSend(szBuffer,i,Type);
 	}
 
 	this->GetName(Nickn);
@@ -82,6 +83,81 @@ bool CPlayer::IsGameMaster()
 		return false;
 	}
 	return false;
+}
+bool CPlayer::CanUseCommand(char* Command)
+{
+	OBJECTSTRUCT *gObj = (OBJECTSTRUCT*)OBJECT_POINTER(this->aIndex);
+	//------------------------------------------------------
+	char query[100];
+	int CanUse;
+	//------------------------------------------------------
+	if(Command == "/gg")
+	{
+		//------------------------------------------------------
+		wsprintf(query, "SELECT Gg FROM GM_Commands WHERE Name ='%s'", gObj->Name);
+		//------------------------------------------------------
+	}
+	else if(Command == "/drop")
+	{
+		//------------------------------------------------------
+		wsprintf(query, "SELECT Dropp FROM GM_Commands WHERE Name ='%s'", gObj->Name);
+		//------------------------------------------------------
+	}
+	else if(Command == "/gmove")
+	{
+		//------------------------------------------------------
+		wsprintf(query, "SELECT Gmove FROM GM_Commands WHERE Name ='%s'", gObj->Name);
+		//------------------------------------------------------
+	}
+	else if(Command == "/reload")
+	{
+		//------------------------------------------------------
+		wsprintf(query, "SELECT Reload FROM GM_Commands WHERE Name ='%s'", gObj->Name);
+		//------------------------------------------------------
+	}
+	//------------------------------------------------------
+	Sql.Exec(query);
+	Sql.Fetch();
+	//------------------------------------------------------
+	if(Command == "/gg")
+	{
+		//------------------------------------------------------
+		CanUse = Sql.GetInt("Gg");
+		//------------------------------------------------------
+	}
+	else if(Command == "/drop")
+	{
+		//------------------------------------------------------
+		CanUse = Sql.GetInt("Dropp");
+		//------------------------------------------------------
+	}
+	else if(Command == "/gmove")
+	{
+		//------------------------------------------------------
+		CanUse = Sql.GetInt("Gmove");
+		//------------------------------------------------------
+	}
+	else if(Command == "/reload")
+	{
+		//------------------------------------------------------
+		CanUse = Sql.GetInt("Reload");
+		//------------------------------------------------------
+	}
+	//------------------------------------------------------
+	Sql.Clear();
+	//------------------------------------------------------
+	if(CanUse == 1)
+	{
+		//------------------------------------------------------
+		return true;
+		//------------------------------------------------------
+	}
+	else
+	{
+		//------------------------------------------------------
+		return false;
+		//------------------------------------------------------
+	}
 }
 bool CPlayer::isOnline()
 {

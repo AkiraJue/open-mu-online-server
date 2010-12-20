@@ -16,6 +16,7 @@ MU_API Main()
 	PROTECT_CHECK_START
 		//--------------------------------------------------
 		Console.Init();
+		ConnectSQL();
 		//--------------------------------------------------
 		Tools.FileExist(INI_NPC);
 		Tools.HookThis((DWORD)&ProtocolCore,0x004038BE);
@@ -24,6 +25,7 @@ MU_API Main()
 		Fixes.EditMemory();
 		LoadIPBlock();
 		NewsSystem.Start();
+
 		//--------------------------------------------------
 	PROTECT_CHECK_ELSE
 		//--------------------------------------------------
