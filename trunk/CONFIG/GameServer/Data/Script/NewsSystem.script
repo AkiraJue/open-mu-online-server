@@ -4,29 +4,14 @@
 // Last Edit Date	: 10 / 12 / 2010					//
 // Version		: Full Season 4 Episode 1 (Japan)			//
 //////////////////////////////////////////////////////////////////////////////////
-[NewsSystem]
+// 0	- Day									//
+// 1	- Month									//
+// 2	- Year									//
+// 3	- Hour									//
+// 4	- Minute								//
+// 5	- Type									//
+// 6	- Message								//
 //////////////////////////////////////////////////////////////////////////////////
-NewsSystemEnabled	= 1	// Enable(1) or Disable(0) news system		//
-SectionCount		= 5	// Max count is 5, Min count is 1		//
-TimeBetweenNews		= 30	// Time interval between news in minutes	//
+// [0]	[1]	[2]	[3]	[4]	[5]	[6]				//
 //////////////////////////////////////////////////////////////////////////////////
-NewsSection1_Message1	= Welcome to OMON Project
-NewsSection1_Message2	= http://tinyurl.com/omon11
-NewsSection1_Message3	= Developed by System32
-//////////////////////////////////////////////////////////////////////////////////
-NewsSection2_Message1	= Welcome to OMON Project
-NewsSection2_Message2	= http://tinyurl.com/omon11
-NewsSection2_Message3	= Developed by System32
-//////////////////////////////////////////////////////////////////////////////////
-NewsSection3_Message1	= Welcome to OMON Project
-NewsSection3_Message2	= http://tinyurl.com/omon11
-NewsSection3_Message3	= Developed by System32
-//////////////////////////////////////////////////////////////////////////////////
-NewsSection4_Message1	= Welcome to OMON Project
-NewsSection4_Message2	= http://tinyurl.com/omon11
-NewsSection4_Message3	= Developed by System32
-//////////////////////////////////////////////////////////////////////////////////
-NewsSection5_Message1	= Welcome to OMON Project
-NewsSection5_Message2	= http://tinyurl.com/omon11
-NewsSection5_Message3	= Developed by System32
-//////////////////////////////////////////////////////////////////////////////////
+23 12 2011 10 23 0 "lol"

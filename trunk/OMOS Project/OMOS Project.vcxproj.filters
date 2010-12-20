@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Old">
+      <UniqueIdentifier>{ead159f2-2885-44f8-a363-7ca283b707d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Old">
+      <UniqueIdentifier>{3f043810-a341-4c71-b448-5206a4f555e6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
@@ -48,6 +54,12 @@
     </ClCompile>
     <ClCompile Include="Monster.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="_GMSystem.cpp">
+      <Filter>Source Files\Old</Filter>
+    </ClCompile>
+    <ClCompile Include="_NewsSystem.cpp">
+      <Filter>Source Files\Old</Filter>
     </ClCompile>
     <ClCompile Include="NewsSystem.cpp">
       <Filter>Source Files</Filter>
@@ -89,6 +101,12 @@
     </ClInclude>
     <ClInclude Include="Tools.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="_GMSystem.h">
+      <Filter>Header Files\Old</Filter>
+    </ClInclude>
+    <ClInclude Include="_NewsSystem.h">
+      <Filter>Header Files\Old</Filter>
     </ClInclude>
     <ClInclude Include="NewsSystem.h">
       <Filter>Header Files</Filter>

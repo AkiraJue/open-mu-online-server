@@ -66,11 +66,17 @@
     <ClCompile Include="Configurations.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="Fixes.cpp" />
+    <ClCompile Include="NewsSystem.cpp" />
+    <ClCompile Include="_GMSystem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="IPBlock.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Monster.cpp" />
-    <ClCompile Include="NewsSystem.cpp" />
+    <ClCompile Include="_NewsSystem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Protocol.cpp" />
     <ClCompile Include="ReadINI.cpp" />
@@ -81,11 +87,17 @@
     <ClInclude Include="Configurations.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="Fixes.h" />
+    <ClInclude Include="NewsSystem.h" />
+    <ClInclude Include="_GMSystem.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="IPBlock.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="Monster.h" />
-    <ClInclude Include="NewsSystem.h" />
+    <ClInclude Include="_NewsSystem.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="Player.h" />
     <ClInclude Include="Protocol.h" />
     <ClInclude Include="ReadINI.h" />
