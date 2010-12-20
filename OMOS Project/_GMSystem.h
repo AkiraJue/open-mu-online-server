@@ -1,38 +1,35 @@
 //=======================================================================================
-//= NewsSystem.h
+//= GMSystem.h
 //=======================================================================================
 
 //------------------------------------------------------
 //- Start
 //------------------------------------------------------
-class gNewsSystem
+class gGMSystem
 {
 public:
 	void Load();
-	void Start();
-
-	int Count;
+	int CheckCommand(char* GMName, char* Command);
 private:
-	int Value[6];
-	int String[255];
+	int Count;
+	int Value[4];
+	int Name[11];
 };
-void Manage(void * lpParam);
+
 //------------------------------------------------------
 //- Structures
 //------------------------------------------------------
-typedef struct gNewsList
+typedef struct gGMCommandList
 {
-	int News_Day;
-	int News_Month;
-	int News_Year;
-	int News_Hour;
-	int News_Minute;
-	char News_Line[255];
-	int News_Type;
-}xNewsList;
+	char Name[11];
+	int Gg;
+	int Reload;
+	int Drop;
+	int Gmove;
+}xGMCommandList;
 
 //------------------------------------------------------
 //- Variables
 //------------------------------------------------------
-extern gNewsSystem NewsSystem;
-extern xNewsList NewsList[255];
+extern gGMSystem GMSystem;
+extern xGMCommandList GMCommandList[255];

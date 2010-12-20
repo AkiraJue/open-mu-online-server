@@ -26,6 +26,7 @@
 #include "Protocol.h"
 #include "IPBlock.h"
 #include "NewsSystem.h"
+//#include "GMSystem.h"
 
 //------------------------------------------------------
 //- Warning Disable
