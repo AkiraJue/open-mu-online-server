@@ -7,10 +7,16 @@
 //- Variables
 //------------------------------------------------------
 CPlayer Player; // Players Class
-CQuery Sql;
+
 //------------------------------------------------------
 //- Start
 //------------------------------------------------------
+CPlayer::CPlayer()
+{
+}
+CPlayer::~CPlayer()
+{
+}
 void CPlayer::SetIndex(DWORD Index)
 {
 	this->aIndex = Index;
@@ -84,81 +90,6 @@ bool CPlayer::IsGameMaster()
 	}
 	return false;
 }
-bool CPlayer::CanUseCommand(char* Command)
-{
-	OBJECTSTRUCT *gObj = (OBJECTSTRUCT*)OBJECT_POINTER(this->aIndex);
-	//------------------------------------------------------
-	char query[100];
-	int CanUse;
-	//------------------------------------------------------
-	if(Command == "/gg")
-	{
-		//------------------------------------------------------
-		wsprintf(query, "SELECT Gg FROM GM_Commands WHERE Name ='%s'", gObj->Name);
-		//------------------------------------------------------
-	}
-	else if(Command == "/drop")
-	{
-		//------------------------------------------------------
-		wsprintf(query, "SELECT Dropp FROM GM_Commands WHERE Name ='%s'", gObj->Name);
-		//------------------------------------------------------
-	}
-	else if(Command == "/gmove")
-	{
-		//------------------------------------------------------
-		wsprintf(query, "SELECT Gmove FROM GM_Commands WHERE Name ='%s'", gObj->Name);
-		//------------------------------------------------------
-	}
-	else if(Command == "/reload")
-	{
-		//------------------------------------------------------
-		wsprintf(query, "SELECT Reload FROM GM_Commands WHERE Name ='%s'", gObj->Name);
-		//------------------------------------------------------
-	}
-	//------------------------------------------------------
-	Sql.Exec(query);
-	Sql.Fetch();
-	//------------------------------------------------------
-	if(Command == "/gg")
-	{
-		//------------------------------------------------------
-		CanUse = Sql.GetInt("Gg");
-		//------------------------------------------------------
-	}
-	else if(Command == "/drop")
-	{
-		//------------------------------------------------------
-		CanUse = Sql.GetInt("Dropp");
-		//------------------------------------------------------
-	}
-	else if(Command == "/gmove")
-	{
-		//------------------------------------------------------
-		CanUse = Sql.GetInt("Gmove");
-		//------------------------------------------------------
-	}
-	else if(Command == "/reload")
-	{
-		//------------------------------------------------------
-		CanUse = Sql.GetInt("Reload");
-		//------------------------------------------------------
-	}
-	//------------------------------------------------------
-	Sql.Clear();
-	//------------------------------------------------------
-	if(CanUse == 1)
-	{
-		//------------------------------------------------------
-		return true;
-		//------------------------------------------------------
-	}
-	else
-	{
-		//------------------------------------------------------
-		return false;
-		//------------------------------------------------------
-	}
-}
 bool CPlayer::isOnline()
 {
 	for(int i = OBJECT_MIN; i < OBJECT_MAX; i++)
@@ -213,6 +144,29 @@ int CPlayer::RemoveMoney(int Count)
 	gObj->Money -= Count;
 	GCMoneySend(aIndex,gObj->Money);
 	return 0;
+}
+bool CPlayer::CanUseCommand(char* CommandID)
+{
+	OBJECTSTRUCT *gObj = (OBJECTSTRUCT*)OBJECT_POINTER(this->aIndex);
+	if(GMSystem.CheckCommand(gObj->Name,CommandID) == 0)
+	{
+		return false;
+	}
+	else if(GMSystem.CheckCommand(gObj->Name,CommandID) == 0)
+	{
+		return true;
+	}
+	else if(GMSystem.CheckCommand(gObj->Name,CommandID) == 2)
+	{
+		Console.Write("[CanUseCommand_Error][%s] Command ID: %s, Dont exist!",gObj->Name,CommandID);
+		return false;
+	}
+	else if(GMSystem.CheckCommand(gObj->Name,CommandID) == 3)
+	{
+		Console.Write("[CanUseCommand_Error][%s] Command ID: %s, Return value: %d",gObj->Name,CommandID,GMSystem.CheckCommand(gObj->Name,CommandID));
+		return false;
+	}
+	return false;
 }
 
 //------------------------------------------------------

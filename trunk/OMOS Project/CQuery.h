@@ -45,5 +45,3 @@ public:
 	int ReadBlob(LPCTSTR szSQL, void *buf);
 	void WriteBlob(LPCTSTR szSQL, void *buf, int size);
 };
-
-void ConnectSQL();

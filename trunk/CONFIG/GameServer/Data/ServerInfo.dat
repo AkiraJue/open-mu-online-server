@@ -1,0 +1,18 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Project Author	: (c) OMOS						//
+// Project Info		: Season 4 + Costum					//
+// Last Edit Date	: 10 / 12 / 2010					//
+// Version		: Full Season 4 Episode 1 (Japan)			//
+//////////////////////////////////////////////////////////////////////////////////
+//----------------------------------------------//
+//             GameServer Configs               //
+//----------------------------------------------//
+[GameServerInfo]
+ServerName 			= srv1
+ServerCode 			= 0
+NonPK 				= 0
+PkLimitFree 			= 1
+ConnectMemberLoad 		= 0
+ChangeCharacterName 		= 0
+NewServer			= 1
+EventOff			= 0

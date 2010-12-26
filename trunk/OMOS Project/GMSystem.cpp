@@ -24,8 +24,7 @@ void gGMSystem::Load()
 	//--------------------------------------------------------------------------------
 	if(!fp)
 	{
-		Tools.MessageBoxShow("GMSystem.script not found!","File not found!");
-		Exit;
+		Tools.FileExist(INI_GMSYS);
 	}
 	//--------------------------------------------------------------------------------
 	rewind(fp);
@@ -55,7 +54,7 @@ void gGMSystem::Load()
 	rewind(fp);
 	fclose(fp);
 	//--------------------------------------------------------------------------------
-	Console.Write("[GMSystem] GM System has been loaded!");
+	Console.Write("[File] File %s loaded!",INI_GMSYS);
 	//--------------------------------------------------------------------------------
 }
 int gGMSystem::CheckCommand(char* GMName, char* Command)
@@ -66,19 +65,19 @@ int gGMSystem::CheckCommand(char* GMName, char* Command)
 			{
 				if(Command == "/gg")
 				{
-					return GMCommandList[this->Count].Gg;
+					return GMCommandList[x].Gg;
 				}
 				else if(Command == "/drop")
 				{
-					return GMCommandList[this->Count].Drop;
+					return GMCommandList[x].Drop;
 				}
 				else if(Command == "/gmove")
 				{
-					return GMCommandList[this->Count].Gmove;
+					return GMCommandList[x].Gmove;
 				}
 				else if(Command == "/reload")
 				{
-					return GMCommandList[this->Count].Reload;
+					return GMCommandList[x].Reload;
 				}
 				else
 				{
@@ -86,6 +85,7 @@ int gGMSystem::CheckCommand(char* GMName, char* Command)
 				}
 			}
 		}
+		return 3;
 }
 //------------------------------------------------------
 //- Variables

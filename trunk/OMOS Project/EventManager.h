@@ -1,28 +1,45 @@
 //=======================================================================================
-//= NewsSystem.h
+//= EventManager.cpp
 //=======================================================================================
-
 //------------------------------------------------------
 //- Start
 //------------------------------------------------------
-class gNewsSystem
+class cEventManager
 {
 public:
+	void Load();
 	void Start();
+	void EditExp(char Exp[256]);
+	void EditDrop(int Drop);
+	int Count;
+
+	int HappyHourStarted;
+private:
+	int Value[6];
 };
-void News_Manage(void * lpParam);
+
+void EventsManage(void * lpParam);
+void HappyHourEvent(void * lpParam);
 //------------------------------------------------------
 //- Structures
 //------------------------------------------------------
-struct gNewsList
+typedef struct gEventList
 {
-	char Message_1[255];
-	char Message_2[255];
-	char Message_3[255];
+	int Type;
+	int Day;
+	int Month;
+	int Year;
+	int Hour;
+	int Minute;
+}xEventList;
+
+enum EventIDs
+{
+	HappyHour	= 0
 };
 
 //------------------------------------------------------
 //- Variables
 //------------------------------------------------------
-extern gNewsSystem NewsSystem;
-extern gNewsList NewsList;
+extern cEventManager EventManager;
+extern xEventList EventList[255];

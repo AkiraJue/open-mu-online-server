@@ -5,7 +5,7 @@
 //------------------------------------------------------
 //- Start
 //------------------------------------------------------
-void gObjMonsterCallPet(DWORD aIndex,int Class,int MonsterID,int MoneyNeed,int LevelMin,int LevelMax);
+void gObjMonsterCallPet(DWORD aIndex,int MonsterID);
 
 //------------------------------------------------------
 //- Structures

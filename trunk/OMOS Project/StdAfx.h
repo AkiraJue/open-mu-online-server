@@ -34,7 +34,8 @@
 #include "Protocol.h"
 #include "IPBlock.h"
 #include "NewsSystem.h"
-#include "CQuery.h"
+#include "GMSystem.h"
+#include "EventManager.h"
 
 //------------------------------------------------------
 //- Warning Disable
