@@ -191,6 +191,10 @@ bool ProtocolCore (BYTE protoNum,LPBYTE aRecv,int aLen,int aIndex,DWORD Encrypt,
 		//-----------------------------------------------------------------------------------------------------------------------------------------------------
 		Player.SendTextMsg(0,ConnectMessage,gObj->Name);
 		//-----------------------------------------------------------------------------------------------------------------------------------------------------
+		if(Player.IsGameMaster() == true)
+		{
+			Player.SendAllTextMsg(0,"Game Master %s has joined!",gObj->Name);
+		}
 		break;
 	case 0x30:
 		{
