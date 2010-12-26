@@ -24,8 +24,7 @@ void gNewsSystem::Load()
 	//--------------------------------------------------------------------------------
 	if(!fp)
 	{
-		Tools.MessageBoxShow("File not found!","GMSystem.script not found!");
-		Exit;
+		Tools.FileExist(INI_NEWS);
 	}
 	//--------------------------------------------------------------------------------
 	rewind(fp);
@@ -55,7 +54,7 @@ void gNewsSystem::Load()
 	rewind(fp);
 	fclose(fp);
 	//--------------------------------------------------------------------------------
-	Console.Write("[NewsSystem] News system configuration has been loaded!");
+	Console.Write("[File] File %s loaded!",INI_NEWS);
 	//--------------------------------------------------------------------------------
 }
 void Manage(void * lpParam)

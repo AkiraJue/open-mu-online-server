@@ -88,18 +88,11 @@
   * Player.SendAllTextMsg() function fixed.
   * Added new game master system!
     * Note: All gamemaster list must be on GM_Commands table, if not it may couse bugs!
-  //========================================================================================================================================
-		if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[GM_Commands]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
-		drop table [dbo].[GM_Commands]
-		GO
-
-		CREATE TABLE [dbo].[GM_Commands] (
-			[Name] [char] (11) COLLATE Latin1_General_CI_AS NULL ,
-			[Gg] [int] NULL ,
-			[Dropp] [int] NULL ,
-			[Gmove] [int] NULL ,
-			[Reload] [int] NULL 
-		) ON [PRIMARY]
-		GO
-//========================================================================================================================================
-
+//////////////////////////////////////////////////////////////////////////////////
+//Version: 1.04 | Code Name: Thunder											//
+//////////////////////////////////////////////////////////////////////////////////
+  * Command /gmove have been fixed.
+  * Added Costum Event manager.
+  * Added new costum event Happy Hour.
+  * Fixed monster types on gObjSetMonsterEx().
+  * Added /summon <monster_id> command	(GM)

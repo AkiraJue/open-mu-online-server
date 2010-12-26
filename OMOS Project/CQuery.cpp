@@ -1,15 +1,5 @@
 #include "stdafx.h"
-CQuery Swwk;
-void ConnectSQL()
-{
-	char Login[100];
-	char Password[100];
-
-	GetPrivateProfileStringA("Main","Login","sa",Login,100,INI);
-	GetPrivateProfileStringA("Main","Password","sa",Password,100,INI);
-	Swwk.Connect(3, "MuOnline", Login, Password);
-	Console.Write("[SQL] Connect to sql server!");
-}
+#include "CQuery.h"
 
 // 생성자:각종 초기화를 담당한다.
 CQuery::CQuery()
@@ -79,9 +69,8 @@ BOOL CQuery::Connect(int Type, char *ConStr, char *UID, char *PWD)
 		while (Ret=SQLGetDiagRec(SQL_HANDLE_DBC, hDbc, ii, SqlState, &NativeError, 
 			Msg, sizeof(Msg), &MsgLen)!=SQL_NO_DATA) {
 			wsprintf(str, "SQLSTATE:%s, Diagnosis:%s",(LPCTSTR)SqlState,(LPCTSTR)Msg);
-			MessageBoxA(0, "WARNING: GameServer cannot connect to SQL Server.", "Critical error", MB_OK | MB_ICONSTOP);
-			Console.Write(str);
-			Exit;
+			MessageBoxA(0, "WARNING: GameServer cannot connect to SQL Server. \nGameServer will start, but some functions (Chaos Castle Rank, Duel Rank etc.) will not work.", "Critical error", MB_OK | MB_ICONSTOP);
+			//..//,,MMM,.Log.outSQL(str);
 			++ii;
 		}
 		return FALSE;
@@ -121,7 +110,7 @@ BOOL CQuery::Exec(LPCTSTR szSQL)
 	SQLNumResultCols(hStmt,&nCol);
 	if (nCol > MAXCOL) {
 		//::MessageBox(NULL,"최대 컬럼 수를 초과했습니다","CQuery 에러",MB_OK);
-		Console.Write("CQuery error :최대 컬럼 수를 초과했습니다");
+		//Log.outSQL("CQuery error :최대 컬럼 수를 초과했습니다");
 		return FALSE;
 	}
 
@@ -309,7 +298,7 @@ void CQuery::PrintDiag()
 		Msg, sizeof(Msg), &MsgLen)!=SQL_NO_DATA) {
 		wsprintf(str, "SQLSTATE:%s, Diagnosis:%s",(LPCTSTR)SqlState,(LPCTSTR)Msg);
 		//::MessageBox(NULL,str,"진단 정보",0);
-		Console.Write(str);
+///		Log.outSQL(str);
 		//LogAdd(str);
 		++ii;
 	}
