@@ -96,3 +96,8 @@
   * Added new costum event Happy Hour.
   * Fixed monster types on gObjSetMonsterEx().
   * Added /summon <monster_id> command	(GM)
+//////////////////////////////////////////////////////////////////////////////////
+//Version: 1.04A | Code Name: Thunder											//
+//////////////////////////////////////////////////////////////////////////////////
+  * GM notice added (can turned on or off).
+  * Fixed /summon command.

@@ -14,6 +14,7 @@ extern DWORD OldProtect;
 #define COMMAND_NAME(CommandName) !memcmp(&aRecv[13],CommandName,strlen(CommandName))
 #define COMMAND_PARAMS(CommandName) aRecv+13+strlen(CommandName)
 #define PGetNPC_ID aRecv[4] + aRecv[3] * 256
+#define Launch(Void) _beginthread(Void,0,NULL)
 #define INI				".//Data//Main.ini"
 #define INI_COMMANDS	".//Data//Command.ini"
 #define INI_FIXES		".//Data//Fixes.ini"

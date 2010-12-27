@@ -11,7 +11,7 @@ DWORD OldProtect;
 //------------------------------------------------------
 //- Start
 //------------------------------------------------------
-MU_API STARNetwork()
+MU_API Main()
 {
 	if(VirtualProtect(LPVOID(0x401000),3543191,PAGE_EXECUTE_READWRITE,&OldProtect))
 	{
@@ -28,7 +28,7 @@ MU_API STARNetwork()
 	}
 	else
 	{
-		Tools.MessageBoxShow(MB_OK,"Error","Cant load GameServer.dll!");
+		Tools.MessageBoxShow(MB_OK,"Error","Cant load OMOS_Server.dll!");
 		Exit;
 	}
 }
