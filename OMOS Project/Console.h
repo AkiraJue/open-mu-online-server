@@ -24,4 +24,4 @@ extern Logger Console;
 //------------------------------------------------------
 //- Defines
 //------------------------------------------------------
-#define CONSOLETITLE "OMON Project :: Version %s - Season %s"
+#define CONSOLETITLE "OMOS Project :: Version %s - Season %s"

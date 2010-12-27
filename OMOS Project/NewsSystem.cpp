@@ -100,7 +100,7 @@ void gNewsSystem::Start()
 	if(ReadINI.GetInt("Main","NewsSystemEnabled",INI) == 1)
 	{
 		this->Load();
-		_beginthread(Manage,0,NULL);
+		Launch(Manage);
 	}
 }
 void gNewsSystem::SendMsg(int Type,char * Text, ...)
